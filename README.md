@@ -1,1 +1,10 @@
 # Named-Entity-Recognition
+
+Information Extraction is the task of automatically extracting structured information from unstructured or semi-structured data. Information Extraction has many applications, including business intelligence, resume harvesting, media analysis, sentiment detection, patent search, and email scanning. Named Entity Recognition (NER) is a subtask of information extraction that seeks to locate and classify entities from text such as person names, organization, locations, monetary values, medical codes etc.
+
+In this project we aim to classify entities from dataset leveraging statistical models, pre-trained models as well as training models from scratch using embeddings. While pre-trained models are robust and have the advantage of being ready to train and test faster, we also aim to train models to extract custom entities. For our multinomial classification, we used linear SVM optimized with SGD as our baseline model, a bidirectional recurrent neural network and pre trained NER models spaCy and flair, out of which Flair gave the best results.
+ 
+The dataset is splitted into word tokens and consists of 4 columns: Sentence #, Word, POS, Tags. It has ~48k sentences and word count is 1354149. The dataset has 42 different part-of-speech (POS) tags and 17 named-entity tags (Tag). The top 10 frequent POS Tags are shown in the following plot with Noun POS dominating the dataset.
+
+Named-entity tags are in IOB (inside-outside-beginning) format. The B- prefix before a tag indicates that the tag is the beginning of a chunk, and an I- prefix before a tag indicates that the tag is inside a chunk. The B-tag is used only when a tag is followed by a tag of the same type without O tokens between them. An O tag indicates that a token belongs to no chunk. The frequency plot for named-entity Tag is shown below (without Tag ‘O’ for better plot). The most frequent is geolocation followed by time, organization and person. The least frequent are art, event or natural-phenomenon.
+  
